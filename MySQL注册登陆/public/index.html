@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		 user:<input type="text" id="user"/><br>
+		 pass:<input type="password" id="pass"/><br>
+		 <button id="btn">登录</button>
+		 <button id="btn1">注册</button>
+	</body>
+	<script src="jquery.min.js"></script>
+	<script>
+		$('#btn').click(function(){
+			$.ajax({
+				url:'http://localhost:8000/user/user',
+				type:'POST',
+				data:{
+					user:$('#user').val(),
+					pass:$('#pass').val()
+				},
+				success:function(da){
+					alert(da)
+				},
+				error:function(){
+				}
+			})
+		})
+		
+		$('#btn1').click(function(){
+			$.ajax({
+				url:'http://localhost:8000/user/user1',
+				type:'POST',
+				data:{
+					user:$('#user').val(),
+					pass:$('#pass').val()
+				},
+				success:function(da){
+					alert(da)
+				},
+				error:function(){
+				}
+			})
+		})
+	</script>
+</html>
